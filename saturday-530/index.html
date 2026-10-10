@@ -32,65 +32,27 @@ body{
     linear-gradient(180deg,#fff2e6 0%, #f5e3d2 44%, #efd8c5 100%);
 }
 .wrap{width:min(100%,430px);margin:0 auto;padding:18px 14px 28px}
-.brand{
-  color:#7b4a3c;
-  font-size:12px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  text-align:center;
-  margin:8px 0 14px;
-  font-weight:800;
-}
-.card{
-  background:linear-gradient(180deg,rgba(255,255,255,.96), rgba(255,249,243,.98));
-  border:1px solid rgba(166,75,55,.12);
-  border-radius:28px;
-  padding:22px 18px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
+.brand{color:#7b4a3c;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin:8px 0 14px;font-weight:800}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.96), rgba(255,249,243,.98));border:1px solid rgba(166,75,55,.12);border-radius:28px;padding:22px 18px;box-shadow:var(--shadow);overflow:hidden}
 .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);font-weight:800}
 .title{font-family:Georgia,"Times New Roman",serif;font-size:35px;line-height:1.04;margin:10px 0 12px}
 .sub{color:var(--muted);line-height:1.55;margin:0 0 20px}
 .progress{display:flex;gap:7px;margin:4px 0 20px}.bar{height:4px;flex:1;background:#eddccf;border-radius:999px}.bar.on{background:linear-gradient(90deg,var(--clay),var(--wine))}
 button,input,textarea{font:inherit}
-.primary{
-  width:100%;min-height:52px;border:0;border-radius:16px;
-  background:linear-gradient(135deg,var(--clay),var(--wine));
-  color:white;font-weight:800;padding:14px 18px;cursor:pointer;
-  box-shadow:0 10px 24px rgba(123,47,64,.2);
-}
+.primary{width:100%;min-height:52px;border:0;border-radius:16px;background:linear-gradient(135deg,var(--clay),var(--wine));color:white;font-weight:800;padding:14px 18px;cursor:pointer;box-shadow:0 10px 24px rgba(123,47,64,.2)}
 .primary:disabled{opacity:.45;box-shadow:none;cursor:not-allowed}
-.ghost{
-  width:100%;min-height:52px;border:1px solid var(--line);border-radius:16px;
-  background:white;color:var(--ink);font-weight:700;padding:13px 14px;cursor:pointer;
-}
+.ghost{width:100%;min-height:52px;border:1px solid var(--line);border-radius:16px;background:white;color:var(--ink);font-weight:700;padding:13px 14px;cursor:pointer}
 .screen{display:none}.screen.active{display:block}
 .envelopes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
-.env{
-  aspect-ratio:1/1.05;border:1px solid var(--line);border-radius:18px;background:#fffdf9;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
-  cursor:pointer;transition:.18s transform,.18s border,.18s background;
-}
-.env:active{transform:scale(.98)}
-.env.selected{border:2px solid var(--clay);background:#fff1e9}
-.env .icon{font-size:29px}.env small{font-size:11px;color:var(--muted);font-weight:700}
+.env{aspect-ratio:1/1.05;border:1px solid var(--line);border-radius:18px;background:#fffdf9;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;cursor:pointer;transition:.18s transform,.18s border,.18s background}
+.env:active{transform:scale(.98)}.env.selected{border:2px solid var(--clay);background:#fff1e9}.env .icon{font-size:29px}.env small{font-size:11px;color:var(--muted);font-weight:700}
 .reveal{border:1px dashed var(--gold);background:#fff6ed;border-radius:18px;padding:16px;margin:12px 0 18px;display:none}.reveal.show{display:block}.reveal strong{display:block;margin-bottom:5px;color:var(--terracotta)}
-.choices{display:grid;gap:10px;margin:18px 0}
-.choice{display:flex;justify-content:space-between;align-items:center;text-align:left}.choice span:last-child{font-size:20px}.choice.picked{border-color:var(--clay);background:#fff1e9}
+.choices{display:grid;gap:10px;margin:18px 0}.choice{display:flex;justify-content:space-between;align-items:center;text-align:left}.choice span:last-child{font-size:20px}.choice.picked{border-color:var(--clay);background:#fff1e9}
 .lock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:280px;margin:18px auto}
-.digit{
-  width:100%;min-width:0;height:62px;border:1px solid var(--line);border-radius:16px;
-  background:white;font-size:26px;font-weight:800;text-align:center;color:var(--ink);
-  -webkit-appearance:none;appearance:none;padding:0;
-}
-.digit:focus{outline:2px solid rgba(200,111,74,.25);border-color:var(--clay)}
+.digit{width:100%;min-width:0;height:62px;border:1px solid var(--line);border-radius:16px;background:white;font-size:26px;font-weight:800;text-align:center;color:var(--ink);-webkit-appearance:none;appearance:none;padding:0}.digit:focus{outline:2px solid rgba(200,111,74,.25);border-color:var(--clay)}
 .hint{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
 .final{background:linear-gradient(145deg,#fff8f0,#f8ece0);border:1px solid #ecd7c2}.time{font-family:Georgia,"Times New Roman",serif;font-size:50px;color:var(--wine);margin:6px 0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.chip{border:1px solid #e2cdb8;border-radius:999px;padding:9px 12px;font-size:12px;background:rgba(255,255,255,.85)}
-.response-box{display:grid;gap:10px;margin-top:16px}
-.note{width:100%;min-height:86px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:12px 14px;color:var(--ink);resize:vertical}
-.secondary{width:100%;min-height:48px;border-radius:16px;border:1px solid var(--line);background:#fff7f2;color:var(--terracotta);font-weight:800;padding:12px 14px;cursor:pointer}
-.fine{font-size:12px;line-height:1.5;color:#8f7c71;text-align:center;margin:16px 6px 0}.pulse{animation:pulse .45s ease}@keyframes pulse{0%{transform:scale(.985)}100%{transform:scale(1)}}
+.response-box{display:grid;gap:10px;margin-top:16px}.note{width:100%;min-height:86px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:12px 14px;color:var(--ink);resize:vertical}.fine{font-size:12px;line-height:1.5;color:#8f7c71;text-align:center;margin:16px 6px 0}.pulse{animation:pulse .45s ease}@keyframes pulse{0%{transform:scale(.985)}100%{transform:scale(1)}}
 @media (max-width:390px){.title{font-size:32px}.card{padding:20px 15px}.time{font-size:44px}.digit{height:58px;font-size:24px}.env small{font-size:10px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
@@ -100,72 +62,11 @@ button,input,textarea{font:inherit}
   <div class="brand">Saturday invitation</div>
   <main class="card">
     <div class="progress"><div class="bar on"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-
-    <section class="screen active" id="s0">
-      <div class="eyebrow">Private mission</div>
-      <h1 class="title">I planned something nice for us.</h1>
-      <p class="sub">Three quick rounds. A few clues. No full spoilers until the end.</p>
-      <button class="primary" data-next="1">Start the game</button>
-    </section>
-
-    <section class="screen" id="s1">
-      <div class="eyebrow">Round one</div>
-      <h2 class="title" style="font-size:29px">Choose an envelope.</h2>
-      <p class="sub">Each one gives you a hint about the night.</p>
-      <div class="envelopes">
-        <button class="env" data-clue="A"><div class="icon">💌</div><small>Envelope A</small></button>
-        <button class="env" data-clue="B"><div class="icon">🍷</div><small>Envelope B</small></button>
-        <button class="env" data-clue="C"><div class="icon">✨</div><small>Envelope C</small></button>
-      </div>
-      <div class="reveal" id="clueBox"><strong id="clueTitle"></strong><span id="clueText"></span></div>
-      <button class="primary" id="round1Next" disabled>Next round</button>
-    </section>
-
-    <section class="screen" id="s2">
-      <div class="eyebrow">Round two</div>
-      <h2 class="title" style="font-size:29px">Pick your vibe.</h2>
-      <p class="sub">No wrong answers. I’m just collecting important date-night information.</p>
-      <div class="choices">
-        <button class="ghost choice" data-group="drink"><span>Red wine mood</span><span>🍷</span></button>
-        <button class="ghost choice" data-group="drink"><span>White / bubbly mood</span><span>🥂</span></button>
-        <button class="ghost choice" data-group="after"><span>Something sweet after</span><span>🍰</span></button>
-        <button class="ghost choice" data-group="after"><span>Walk and keep the night going</span><span>🌙</span></button>
-      </div>
-      <button class="primary" id="round2Next" disabled>Lock in my answers</button>
-    </section>
-
-    <section class="screen" id="s3">
-      <div class="eyebrow">Final round</div>
-      <h2 class="title" style="font-size:29px">Unlock the time.</h2>
-      <p class="sub">Three digits. One detail you actually need to know.</p>
-      <div class="lock">
-        <input class="digit" id="d1" inputmode="numeric" maxlength="1" aria-label="First digit" placeholder="?" />
-        <input class="digit" id="d2" inputmode="numeric" maxlength="1" aria-label="Second digit" placeholder="?" />
-        <input class="digit" id="d3" inputmode="numeric" maxlength="1" aria-label="Third digit" placeholder="?" />
-      </div>
-      <div class="hint">Hint: 5 • 3 • 0</div>
-      <button class="primary" id="unlock">Unlock Saturday</button>
-      <p class="hint" id="lockMsg" aria-live="polite"></p>
-    </section>
-
-    <section class="screen final" id="s4">
-      <div class="eyebrow">Saturday is yours</div>
-      <h2 class="title" style="font-size:29px">Be ready by</h2>
-      <div class="time">5:30 PM</div>
-      <p class="sub" style="color:#5f554d">Come cute, comfortable, and ready to let me handle the evening.</p>
-      <div class="chips">
-        <div class="chip">something creative</div>
-        <div class="chip">a little messy</div>
-        <div class="chip">wine involved</div>
-        <div class="chip">good food after</div>
-      </div>
-      <button class="primary" id="accept">I’m in ♡</button>
-      <div class="reveal" id="accepted"><strong>Perfect.</strong><span>That’s all you get for now. See you Saturday.</span></div>
-      <div class="response-box">
-        <textarea class="note" id="replyNote" placeholder="Optional: add a little note before you confirm."></textarea>
-        <p class="hint">Tap “I’m in” and your reply opens directly in Messages.</p>
-      </div>
-    </section>
+    <section class="screen active" id="s0"><div class="eyebrow">Private mission</div><h1 class="title">I planned something nice for us.</h1><p class="sub">Three quick rounds. A few clues. No full spoilers until the end.</p><button class="primary" data-next="1">Start the game</button></section>
+    <section class="screen" id="s1"><div class="eyebrow">Round one</div><h2 class="title" style="font-size:29px">Choose an envelope.</h2><p class="sub">Each one gives you a hint about the night.</p><div class="envelopes"><button class="env" data-clue="A"><div class="icon">💌</div><small>Envelope A</small></button><button class="env" data-clue="B"><div class="icon">🍷</div><small>Envelope B</small></button><button class="env" data-clue="C"><div class="icon">✨</div><small>Envelope C</small></button></div><div class="reveal" id="clueBox"><strong id="clueTitle"></strong><span id="clueText"></span></div><button class="primary" id="round1Next" disabled>Next round</button></section>
+    <section class="screen" id="s2"><div class="eyebrow">Round two</div><h2 class="title" style="font-size:29px">Pick your vibe.</h2><p class="sub">No wrong answers. I’m just collecting important date-night information.</p><div class="choices"><button class="ghost choice" data-group="drink"><span>Red wine mood</span><span>🍷</span></button><button class="ghost choice" data-group="drink"><span>White / bubbly mood</span><span>🥂</span></button><button class="ghost choice" data-group="after"><span>Something sweet after</span><span>🍰</span></button><button class="ghost choice" data-group="after"><span>Walk and keep the night going</span><span>🌙</span></button></div><button class="primary" id="round2Next" disabled>Lock in my answers</button></section>
+    <section class="screen" id="s3"><div class="eyebrow">Final round</div><h2 class="title" style="font-size:29px">Unlock the time.</h2><p class="sub">Three digits. One detail you actually need to know.</p><div class="lock"><input class="digit" id="d1" inputmode="numeric" maxlength="1" aria-label="First digit" placeholder="?" /><input class="digit" id="d2" inputmode="numeric" maxlength="1" aria-label="Second digit" placeholder="?" /><input class="digit" id="d3" inputmode="numeric" maxlength="1" aria-label="Third digit" placeholder="?" /></div><div class="hint">Hint: 5 • 3 • 0</div><button class="primary" id="unlock">Unlock Saturday</button><p class="hint" id="lockMsg" aria-live="polite"></p></section>
+    <section class="screen final" id="s4"><div class="eyebrow">Saturday is yours</div><h2 class="title" style="font-size:29px">Be ready by</h2><div class="time">5:30 PM</div><p class="sub" style="color:#5f554d">Come cute, comfortable, and ready to let me handle the evening.</p><div class="chips"><div class="chip">something creative</div><div class="chip">a little messy</div><div class="chip">wine involved</div><div class="chip">good food after</div></div><button class="primary" id="accept">I’m in ♡</button><div class="reveal" id="accepted"><strong>Perfect.</strong><span>That’s all you get for now. See you Saturday.</span></div><div class="response-box"><textarea class="note" id="replyNote" placeholder="Optional: add a little note before you confirm."></textarea><p class="hint">Tap “I’m in” and your reply opens directly in Messages.</p></div></section>
   </main>
   <p class="fine">No addresses or spoiler-heavy details here. Just the invitation.</p>
 </div>
@@ -174,55 +75,25 @@ button,input,textarea{font:inherit}
  const screens=[...document.querySelectorAll('.screen')], bars=[...document.querySelectorAll('.bar')], card=document.querySelector('.card');
  const show=n=>{screens.forEach((s,i)=>s.classList.toggle('active',i===n));bars.forEach((b,i)=>b.classList.toggle('on',i<=n));card.classList.remove('pulse');void card.offsetWidth;card.classList.add('pulse');window.scrollTo({top:0,behavior:'smooth'})};
  document.querySelector('[data-next="1"]').addEventListener('click',()=>show(1));
- const clueCopy={
-   A:['Clue unlocked','Dress cute, but comfortable enough to move around.'],
-   B:['Clue unlocked','There’s a good chance a sip or two will be involved.'],
-   C:['Clue unlocked','Your hands may get a little messy before dinner.']
- };
- document.querySelectorAll('.env').forEach(btn=>btn.addEventListener('click',()=>{
-   document.querySelectorAll('.env').forEach(x=>x.classList.remove('selected'));
-   btn.classList.add('selected');
-   const [t,x]=clueCopy[btn.dataset.clue];
-   document.getElementById('clueTitle').textContent=t;
-   document.getElementById('clueText').textContent=x;
-   document.getElementById('clueBox').classList.add('show');
-   document.getElementById('round1Next').disabled=false;
- }));
+ const clueCopy={A:['Clue unlocked','Dress cute, but comfortable enough to move around.'],B:['Clue unlocked','There’s a good chance a sip or two will be involved.'],C:['Clue unlocked','Your hands may get a little messy before dinner.']};
+ document.querySelectorAll('.env').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.env').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');const [t,x]=clueCopy[btn.dataset.clue];document.getElementById('clueTitle').textContent=t;document.getElementById('clueText').textContent=x;document.getElementById('clueBox').classList.add('show');document.getElementById('round1Next').disabled=false;}));
  document.getElementById('round1Next').addEventListener('click',()=>show(2));
  const picked={drink:false,after:false};
- document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{
-   const g=btn.dataset.group;
-   document.querySelectorAll(`[data-group="${g}"]`).forEach(x=>x.classList.remove('picked'));
-   btn.classList.add('picked');
-   picked[g]=true;
-   document.getElementById('round2Next').disabled=!(picked.drink&&picked.after);
- }));
+ document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.dataset.group;document.querySelectorAll(`[data-group="${g}"]`).forEach(x=>x.classList.remove('picked'));btn.classList.add('picked');picked[g]=true;document.getElementById('round2Next').disabled=!(picked.drink&&picked.after);}));
  document.getElementById('round2Next').addEventListener('click',()=>show(3));
  const ds=[document.getElementById('d1'),document.getElementById('d2'),document.getElementById('d3')];
- ds.forEach((d,i)=>{
-   d.addEventListener('input',()=>{d.value=d.value.replace(/\D/g,'').slice(0,1);if(d.value&&ds[i+1])ds[i+1].focus()});
-   d.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!d.value&&ds[i-1])ds[i-1].focus()});
- });
- document.getElementById('unlock').addEventListener('click',()=>{
-   const v=ds.map(x=>x.value).join('');
-   if(v==='530'){document.getElementById('lockMsg').textContent='';show(4)}
-   else{document.getElementById('lockMsg').textContent='Almost. The hint is being very generous.'}
- });
- const selectedText=group=>{
-   const el=document.querySelector(`[data-group="${group}"].picked`);
-   return el?el.innerText.replace(/\s+/g,' ').trim():'No choice';
- };
+ ds.forEach((d,i)=>{d.addEventListener('input',()=>{d.value=d.value.replace(/\D/g,'').slice(0,1);if(d.value&&ds[i+1])ds[i+1].focus()});d.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!d.value&&ds[i-1])ds[i-1].focus()});});
+ document.getElementById('unlock').addEventListener('click',()=>{const v=ds.map(x=>x.value).join('');if(v==='530'){document.getElementById('lockMsg').textContent='';show(4)}else{document.getElementById('lockMsg').textContent='Almost. The hint is being very generous.'}});
+ const selectedText=group=>{const el=document.querySelector(`[data-group="${group}"].picked`);return el?el.innerText.replace(/\s+/g,' ').trim():'No choice';};
  document.getElementById('accept').addEventListener('click',()=>{
    const note=(document.getElementById('replyNote').value||'').trim();
-   const msg=[
-     `I finished your little Saturday game 😌 I’ll be ready by 5:30.`,
-     `Wine: ${selectedText('drink')}`,
-     `After: ${selectedText('after')}`,
-     note?`And: ${note}`:''
-   ].filter(Boolean).join('\n');
+   const msg=[`I finished your little Saturday game 😌 I’ll be ready by 5:30.`,`Wine: ${selectedText('drink')}`,`After: ${selectedText('after')}`,note?`And: ${note}`:''].filter(Boolean).join('\n');
    document.getElementById('accepted').classList.add('show');
    document.getElementById('accept').textContent='Opening Messages…';
-   const smsUrl='sms:&body='+encodeURIComponent(msg);
+   const params=new URLSearchParams(window.location.search);
+   let recipient=(params.get('to')||'').replace(/\D/g,'');
+   if(recipient.length===10) recipient='1'+recipient;
+   const smsUrl=recipient?`sms:${recipient}&body=${encodeURIComponent(msg)}`:`sms:&body=${encodeURIComponent(msg)}`;
    window.location.href=smsUrl;
  });
 })();
