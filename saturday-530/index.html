@@ -162,9 +162,8 @@ button,input,textarea{font:inherit}
       <button class="primary" id="accept">I’m in ♡</button>
       <div class="reveal" id="accepted"><strong>Perfect.</strong><span>That’s all you get for now. See you Saturday.</span></div>
       <div class="response-box">
-        <textarea class="note" id="replyNote" placeholder="Optional: leave a cute reply, or what wine vibe you're in."></textarea>
-        <button class="secondary" id="copyReply">Copy reply to send</button>
-        <p class="hint">Tap “Send my response” and choose Messages to send it back.</p>
+        <textarea class="note" id="replyNote" placeholder="Optional: add a little note before you confirm."></textarea>
+        <p class="hint">Tap “I’m in” and your reply opens directly in Messages.</p>
       </div>
     </section>
   </main>
@@ -214,12 +213,6 @@ button,input,textarea{font:inherit}
    return el?el.innerText.replace(/\s+/g,' ').trim():'No choice';
  };
  document.getElementById('accept').addEventListener('click',()=>{
-   document.getElementById('accepted').classList.add('show');
-   document.getElementById('accept').disabled=true;
-   document.getElementById('accept').textContent='Confirmed ♡';
- });
- document.getElementById('copyReply').textContent='Send my response';
- document.getElementById('copyReply').addEventListener('click',async()=>{
    const note=(document.getElementById('replyNote').value||'').trim();
    const msg=[
      `I finished your little Saturday game 😌 I’ll be ready by 5:30.`,
@@ -227,19 +220,10 @@ button,input,textarea{font:inherit}
      `After: ${selectedText('after')}`,
      note?`And: ${note}`:''
    ].filter(Boolean).join('\n');
-   const btn=document.getElementById('copyReply');
-   try{
-     if(navigator.share){
-       await navigator.share({title:'Saturday answer',text:msg});
-       btn.textContent='Sent / shared ✓';
-     }else{
-       await navigator.clipboard.writeText(msg);
-       btn.textContent='Copied — send it to him';
-     }
-   }catch(e){
-     if(e && e.name==='AbortError') return;
-     try{await navigator.clipboard.writeText(msg);btn.textContent='Copied — send it to him'}catch(_){document.getElementById('replyNote').value=msg;btn.textContent='Reply ready above'}
-   }
+   document.getElementById('accepted').classList.add('show');
+   document.getElementById('accept').textContent='Opening Messages…';
+   const smsUrl='sms:&body='+encodeURIComponent(msg);
+   window.location.href=smsUrl;
  });
 })();
 </script>
