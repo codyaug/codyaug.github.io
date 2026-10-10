@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#17110f" />
+<title>Saturday, 5:30</title>
+<style>
+:root{--ink:#17110f;--paper:#fffaf3;--wine:#6d2432;--gold:#b7915a;--muted:#81766d;--line:#ded2c4}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#17110f 0,#241715 100%);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}.wrap{width:min(100%,460px);margin:0 auto;padding:22px 16px 34px}.brand{color:#e9dccb;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin:8px 0 18px}.card{background:var(--paper);border:1px solid rgba(255,255,255,.22);border-radius:28px;padding:24px;box-shadow:0 24px 70px rgba(0,0,0,.28)}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:800}.title{font-family:Georgia,"Times New Roman",serif;font-size:38px;line-height:1.02;margin:10px 0 12px}.sub{color:var(--muted);line-height:1.55;margin:0 0 22px}.progress{display:flex;gap:7px;margin:6px 0 22px}.bar{height:4px;flex:1;background:#eadfd2;border-radius:999px}.bar.on{background:var(--wine)}button{font:inherit}.primary{width:100%;min-height:52px;border:0;border-radius:16px;background:var(--wine);color:white;font-weight:800;padding:14px 18px;cursor:pointer}.primary:disabled{opacity:.45}.ghost{width:100%;min-height:50px;border:1px solid var(--line);border-radius:16px;background:white;color:var(--ink);font-weight:700;padding:13px 16px;cursor:pointer}.screen{display:none}.screen.active{display:block}.envelopes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.env{aspect-ratio:1/1.05;border:1px solid var(--line);border-radius:18px;background:#fffdf9;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;cursor:pointer;transition:.18s transform,.18s border}.env:active{transform:scale(.98)}.env.selected{border:2px solid var(--wine);background:#fbf1ef}.env .icon{font-size:28px}.env small{font-size:11px;color:var(--muted);font-weight:700}.reveal{border:1px dashed var(--gold);background:#fff7ec;border-radius:18px;padding:16px;margin:12px 0 18px;display:none}.reveal.show{display:block}.reveal strong{display:block;margin-bottom:5px}.choices{display:grid;gap:10px;margin:18px 0}.choice{display:flex;justify-content:space-between;align-items:center;text-align:left}.choice span:last-child{font-size:20px}.choice.picked{border-color:var(--wine);background:#fbf1ef}.lock{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.digit{height:62px;border:1px solid var(--line);border-radius:16px;background:white;font-size:24px;font-weight:800;text-align:center}.hint{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}.final{background:linear-gradient(145deg,#fffaf3,#f4e6d4);border:1px solid #e7d5c0}.time{font-family:Georgia,"Times New Roman",serif;font-size:52px;color:var(--wine);margin:6px 0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.chip{border:1px solid #d9c7b3;border-radius:999px;padding:9px 12px;font-size:12px;background:rgba(255,255,255,.7)}.fine{font-size:12px;line-height:1.5;color:#c8baaa;text-align:center;margin:18px 3px 0}.pulse{animation:pulse .5s ease}@keyframes pulse{0%{transform:scale(.97)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">A Saturday invitation</div>
+  <main class="card">
+    <div class="progress"><div class="bar on"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+
+    <section class="screen active" id="s0">
+      <div class="eyebrow">Private mission</div>
+      <h1 class="title">I planned something for us.</h1>
+      <p class="sub">You only need to complete three tiny rounds. No spoilers until the end.</p>
+      <button class="primary" data-next="1">Start the game</button>
+    </section>
+
+    <section class="screen" id="s1">
+      <div class="eyebrow">Round one</div>
+      <h2 class="title" style="font-size:30px">Choose an envelope.</h2>
+      <p class="sub">They all lead to Saturday. Only one gives you your first clue.</p>
+      <div class="envelopes">
+        <button class="env" data-clue="A"><div class="icon">✉</div><small>Envelope A</small></button>
+        <button class="env" data-clue="B"><div class="icon">✉</div><small>Envelope B</small></button>
+        <button class="env" data-clue="C"><div class="icon">✉</div><small>Envelope C</small></button>
+      </div>
+      <div class="reveal" id="clueBox"><strong id="clueTitle"></strong><span id="clueText"></span></div>
+      <button class="primary" id="round1Next" disabled>Next round</button>
+    </section>
+
+    <section class="screen" id="s2">
+      <div class="eyebrow">Round two</div>
+      <h2 class="title" style="font-size:30px">Quick decisions.</h2>
+      <p class="sub">No wrong answers. I’m just collecting important date-night intelligence.</p>
+      <div class="choices">
+        <button class="ghost choice" data-group="drink"><span>Red wine</span><span>🍷</span></button>
+        <button class="ghost choice" data-group="drink"><span>White wine</span><span>🥂</span></button>
+        <button class="ghost choice" data-group="after"><span>Dessert after</span><span>🍰</span></button>
+        <button class="ghost choice" data-group="after"><span>Keep the night going</span><span>✨</span></button>
+      </div>
+      <button class="primary" id="round2Next" disabled>Lock in my answers</button>
+    </section>
+
+    <section class="screen" id="s3">
+      <div class="eyebrow">Final round</div>
+      <h2 class="title" style="font-size:30px">Unlock the time.</h2>
+      <p class="sub">One last code before you get the only detail you actually need.</p>
+      <div class="lock">
+        <input class="digit" id="d1" inputmode="numeric" maxlength="1" aria-label="First digit" placeholder="?" />
+        <input class="digit" id="d2" inputmode="numeric" maxlength="1" aria-label="Second digit" placeholder="?" />
+        <input class="digit" id="d3" inputmode="numeric" maxlength="1" aria-label="Third digit" placeholder="?" />
+      </div>
+      <div class="hint">Hint: five • three • zero</div>
+      <button class="primary" id="unlock">Unlock Saturday</button>
+      <p class="hint" id="lockMsg" aria-live="polite"></p>
+    </section>
+
+    <section class="screen final" id="s4">
+      <div class="eyebrow">Saturday is yours</div>
+      <h2 class="title" style="font-size:30px">Be ready by</h2>
+      <div class="time">5:30 PM</div>
+      <p class="sub" style="color:#5f554d">Come cute, comfortable, and ready to let me handle the evening.</p>
+      <div class="chips">
+        <div class="chip">Something creative</div>
+        <div class="chip">A little messy</div>
+        <div class="chip">A bottle is involved</div>
+        <div class="chip">Dinner after</div>
+      </div>
+      <button class="primary" id="accept">I’ll be ready ♡</button>
+      <div class="reveal" id="accepted"><strong>Perfect.</strong><span>That’s all you get for now. See you Saturday.</span></div>
+    </section>
+  </main>
+  <p class="fine">No addresses. No spoilers. Just show up.</p>
+</div>
+<script>
+(()=>{
+ const screens=[...document.querySelectorAll('.screen')],bars=[...document.querySelectorAll('.bar')];
+ const card=document.querySelector('.card');
+ const show=n=>{screens.forEach((s,i)=>s.classList.toggle('active',i===n));bars.forEach((b,i)=>b.classList.toggle('on',i<=n));card.classList.remove('pulse');void card.offsetWidth;card.classList.add('pulse');window.scrollTo({top:0,behavior:'smooth'})};
+ document.querySelector('[data-next="1"]').addEventListener('click',()=>show(1));
+ const clueCopy={A:['Clue unlocked','Wear something you can move around in.'],B:['Clue unlocked','Your hands may get a little messy.'],C:['Clue unlocked','You’ll leave with more than a dinner receipt.']};
+ document.querySelectorAll('.env').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.env').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');const [t,x]=clueCopy[btn.dataset.clue];document.getElementById('clueTitle').textContent=t;document.getElementById('clueText').textContent=x;document.getElementById('clueBox').classList.add('show');document.getElementById('round1Next').disabled=false;}));
+ document.getElementById('round1Next').addEventListener('click',()=>show(2));
+ const picked={drink:false,after:false};
+ document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.dataset.group;document.querySelectorAll(`[data-group="${g}"]`).forEach(x=>x.classList.remove('picked'));btn.classList.add('picked');picked[g]=true;document.getElementById('round2Next').disabled=!(picked.drink&&picked.after);}));
+ document.getElementById('round2Next').addEventListener('click',()=>show(3));
+ const ds=[document.getElementById('d1'),document.getElementById('d2'),document.getElementById('d3')];
+ ds.forEach((d,i)=>d.addEventListener('input',()=>{d.value=d.value.replace(/\D/g,'').slice(0,1);if(d.value&&ds[i+1])ds[i+1].focus()}));
+ document.getElementById('unlock').addEventListener('click',()=>{const v=ds.map(x=>x.value).join('');if(v==='530'){document.getElementById('lockMsg').textContent='';show(4)}else{document.getElementById('lockMsg').textContent='Not quite. The hint is being very generous.'}});
+ document.getElementById('accept').addEventListener('click',()=>{document.getElementById('accepted').classList.add('show');document.getElementById('accept').disabled=true;document.getElementById('accept').textContent='Accepted ♡'});
+})();
+</script>
+</body>
+</html>
